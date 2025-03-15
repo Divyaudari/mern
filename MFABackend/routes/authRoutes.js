@@ -1,9 +1,10 @@
-import express from 'express';
-import { login, verifyOTP } from '../controllers/authController.js';
+import express from "express";
+import { register, login, verifyOTP } from "../controllers/authController.js";
 
 const router = express.Router();
 
-router.post('/login', login);        // Login and send OTP if MFA enabled
-router.post('/verify-otp', verifyOTP); // Verify OTP and complete login
+router.post("/register", register); // ✅ Add this for user registration
+router.post("/login", login);
+router.post("/verify-otp", verifyOTP);
 
 export default router;
